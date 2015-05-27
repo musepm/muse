@@ -8,18 +8,18 @@ Muse simplifies microservices.
 
 # Services
 
-# File (S3)
+## File (S3)
 
 
-# Message Queue (RabbitMQ/CloudAMQP)
+## Message Queue (RabbitMQ/CloudAMQP)
 
 
-# Auth (Auth0)
+## Auth (Auth0)
 
 
-# Text messaging (SMS)
+## Text messaging/SMS (Twilio)
 
-# New Reliq
+## Logging/Monitoring (New Reliq)
  
 # Architecture
 
