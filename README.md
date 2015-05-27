@@ -13,6 +13,8 @@ APIs are focused on core functionality to stay clean and
 simple.   Service modules return promises that automatically
 connect.
 
+All service methods return promises.
+
 # Testing/Mocks
 
 All services implement an identical mock API which is enabled
@@ -35,7 +37,6 @@ available
 then it will automatically sign the user up or walk them
 through the sign-up for that service.  (Or perhaps pull from a 
 set of pre-configured accounts for each service.)
-
 
 ## File (S3/Rackspace)
 
