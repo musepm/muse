@@ -55,7 +55,7 @@ require('muse-s3')('my-bucket')
 ## Message Queue (RabbitMQ/CloudAMQP)
 
 ```shell
-muse enable msgq`
+muse enable msgq
 ```
 
 ```javascript
