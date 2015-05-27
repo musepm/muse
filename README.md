@@ -97,7 +97,7 @@ require('muse-text')('+16515556677')
 ### Naming convention
 
 * Mock classes for testing are in `muse-mock-{service}`, 
-e.g. `muse-mock-text` for the text/SMS mock implementation.
+e.g. `muse-mock-text` for the text/SMS mock implementation.  (Might use Sinon to enhance mock objects returned to user.)
 
 * Each mock and back end implements a class with an identical 
 set of public methods.  Back end modules are named 
