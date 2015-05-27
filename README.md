@@ -106,7 +106,7 @@ set of public methods.  Back end modules are named
 and if so provides and initializes `muse-mock-{service}` 
 or if not mocking then `muse-{service}-{default_provider}`. 
 
-## Registry/Vault
+## Credentials Registry/Vault
 
 This is a server that can be private self-hosted or perhaps
 a PaaS offering.
