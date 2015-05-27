@@ -29,7 +29,8 @@ To add a microservice to your project simply run
 them to package.json.
 
 * copy the credentials out of the local cache if they are 
-available
+available (or maybe leave them encrypted in the local cache,
+and then the = `muse` module retrieves them at runtime).
 
 * if not cached, try to retrieve credentials from the registry server
 
