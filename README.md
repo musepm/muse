@@ -24,10 +24,7 @@ by calling `require('muse').mockAll()`;
 require('muse-s3')('my-bucket')
 .then(function(s3) {
   var file = fs.createReadStream('file.bin');
-
-  var upload = s3.upload('key-name');
-
-  file.pipe(upload);
+  file.pipe(s3.upload('key-name'));
 });
 ```
 
@@ -57,7 +54,6 @@ require('muse-text')('+16515556677')
   text.send('+14506667788', "Welcome to SERVICE.");
 });
 ```
-```
 
 ## Logging/Monitoring (New Reliq)
  
@@ -74,7 +70,9 @@ e.g. `muse-mock-text` for the text/SMS mock implementation.
 set of public methods.  Back end modules are named 
 `muse-{service}-{provider}` e.g. `muse-text-twilio` 
 
-* The `muse-{service}` module  
+* The `muse-{service}` module checks whether mocking is enabled
+and if so provides and initializes `muse-mock-{service}` 
+or if not mocking then `muse-{service}-{default_provider}`. 
 
 ## Registry/Vault
 
@@ -82,4 +80,6 @@ The `keytar` node module may be useful for implementing this.
 
 ## Sign-up Plugins
 
-
+Internal microservices or third party API providers can provide
+endpoints for the registry/tool to easily create accounts and
+retrieve credentials.
