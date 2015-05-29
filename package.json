@@ -1,13 +1,13 @@
 {
-  "name": "muse",
+  "name": "musepm",
   "version": "1.0.0",
   "description": "Muse simplifies microservices",
   "main": "lib/index.js",
   "bin": {
-    "muse": "./bin/index.js"
+    "musepm": "lib/bin/index.js"
   },
   "scripts": {
-    "build": "babel -d bin --stage 1 src/bin; babel -d lib --stage 1 src",
+    "build": "babel -d lib --stage 1 src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,7 +27,6 @@
   "homepage": "https://github.com/runvnc/muse",
   "dependencies": {
     "commander": "^2.8.1",
-    "json-update": "^1.2.0",
     "shelljs": "^0.5.0"
   },
   "devDependencies": {

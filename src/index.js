@@ -20,24 +20,9 @@ var obj = {
       var mod = install = `muse-${service}`;
     }
     let ret = exec(`npm install ${install}`);
-    exec(`node_modules/${mod}/bin/signup.js`);
-  },
+    require(`node_modules/${mod}/signup`);
+  }
 
-  save(data, cb) {
-    require('json-update').update('muse.json', data, (e) => {
-      if (e) {
-        console.error(`Could not save muse.json: ${e}`);
-        process.exit(2);
-      }
-      cb();
-    });
-  },
-
-  newCredentials(data) {
-    obj.save(data, () => {
-      console.log("Muse saved credentials.");
-    });
-  }    
 }
 
 module.exports = obj;
