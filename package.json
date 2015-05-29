@@ -2,7 +2,7 @@
   "name": "muse",
   "version": "1.0.0",
   "description": "Muse simplifies microservices",
-  "main": "lib/index.js"
+  "main": "lib/index.js",
   "bin": {
     "muse": "./bin/index.js"
   },
