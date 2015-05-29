@@ -12,14 +12,8 @@ var obj = {
   },
 
   enable(service) {
-    if (service.indexOf('/')>0) {
-      let tokens = service.split('/');
-      var install = service.replace('/','/muse-');
-      var mod = `muse-${tokens[1]}`;
-    } else {
-      var mod = install = `muse-${service}`;
-    }
-    let ret = exec(`npm install ${install}`);
+    var mod = `musepm-${service}`;
+    let ret = exec(`npm install ${mod}`);
     require(`node_modules/${mod}/signup`);
   }
 
