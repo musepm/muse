@@ -4,7 +4,7 @@ Muse simplifies microservices.
 
 # Install
 
-`npm install -g muse`
+`npm install -g runvnc/muse`
 
 # Services
 
@@ -33,7 +33,7 @@ them to package.json.
 ## Slack Realtime
 
 ```shell
-muse enable slack
+muse enable runvnc/slack
 ```
 
 ```javascript

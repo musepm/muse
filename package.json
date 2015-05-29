@@ -6,7 +6,7 @@
     "muse": "./bin/index.js"
   },
   "scripts": {
-    "build": "babel -d bin --stage 1 src/bin",
+    "build": "babel -d bin --stage 1 src/bin; babel -d lib --stage 1 src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,7 +25,9 @@
   },
   "homepage": "https://github.com/runvnc/muse",
   "dependencies": {
-    "commander": "^2.8.1"
+    "commander": "^2.8.1",
+    "json-update": "^1.2.0",
+    "shelljs": "^0.5.0"
   },
   "devDependencies": {
     "babel": "^5.4.7"
