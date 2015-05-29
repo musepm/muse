@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var program = require('commander'),
-    lib = requir/e('../index');
+    lib = require('../index');
 
 program
 .version('0.0.1')
