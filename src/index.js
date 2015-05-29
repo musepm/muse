@@ -20,7 +20,7 @@ var obj = {
       var mod = install = `muse-${service}`;
     }
     let ret = exec(`npm install ${install}`);
-    exec(`node_modules/${mod}/node_modules/.bin/signup`);
+    exec(`node_modules/${mod}/bin/signup.js`);
   },
 
   save(data, cb) {
