@@ -14,7 +14,8 @@ var obj = {
   enable(service) {
     var mod = `musepm-${service}`;
     let ret = exec(`npm install ${mod}`);
-    require(`node_modules/${mod}/signup`);
+    exec('pwd');
+    exec(`node ./node_modules/${mod}/lib/signup/index.js`);
   }
 
 }

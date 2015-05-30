@@ -1,6 +1,6 @@
 {
   "name": "musepm",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "Muse simplifies microservices",
   "main": "lib/index.js",
   "bin": {
