@@ -14,10 +14,17 @@ var obj = {
   enable(service) {
     var mod = `musepm-${service}`;
     let ret = exec(`npm install ${mod}`);
-    exec('pwd');
-    exec(`node ./node_modules/${mod}/lib/signup/index.js`);
+    require(`${process.cwd()}/node_modules/${mod}/lib/signup`);
   }
 
 }
+
+class Api {
+  constructor(config) {
+    this.config = config;
+  }
+}
+
+obj.Api = Api;
 
 module.exports = obj;
