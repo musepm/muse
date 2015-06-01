@@ -4,10 +4,10 @@ var obj = {
   mocking: false,
 
   doRequire(service) {
-    if (mocking) {
+    if (obj.mocking) {
       return require(`${service}/mock`);
     } else {
-      return require(`${service}/real`);
+      return require(`${service}/lib/real`);
     }
   },
 
