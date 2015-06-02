@@ -1,4 +1,5 @@
 require('shelljs/global');
+var { EventEmitter } = require('events');
 
 var obj = {
   mocking: false,
@@ -19,8 +20,9 @@ var obj = {
 
 }
 
-class Api {
+class Api extends EventEmitter {
   constructor(config) {
+    super();
     this.config = config;
   }
 }
