@@ -23,8 +23,8 @@ var obj = {
     require(`${process.cwd()}/node_modules/${mod}/lib/signup`);
   },
 
-  signon(service, cfg) {
-    require(service).signon(cfg);   
+  async signon(service, cfg) {
+    return await require(`musepm-${service}`).signon(cfg);   
   }
 }
 

@@ -37,13 +37,15 @@ muse enable runvnc/slack
 ```
 
 ```javascript
-require('muse-slack')()
-.then(function(slack) {
-  slack.join('mychannel');
-  slack.on('message', function(msg) {
-    slack.send(msg.channelId, 'Generic response.');
-  });
-});
+var muse = require('muse');                                       
+                                                                  
+require('musepm').signon('slack', 'testbot03')
+.then( function(slack) {   
+  slack.on('open', function() {
+    let channel = slack.getChannelByName('general');
+    channel.send('Testing abc');
+  });                                                             
+});                                                               
 ```
 
 # Architecture
