@@ -4,6 +4,10 @@ var { EventEmitter } = require('events');
 var obj = {
   mocking: false,
 
+  mockAll() {
+    obj.mocking = true;
+  },
+
   doRequire(service) {
     if (obj.mocking) {
       return require(`${service}/mock`);
@@ -14,7 +18,7 @@ var obj = {
 
   enable(service) {
     var mod = `musepm-${service}`;
-    let ret = exec(`npm install ${mod}`);
+    let ret = exec(`npm install --save ${mod}`);
     require(`${process.cwd()}/node_modules/${mod}/lib/signup`);
   }
 
