@@ -18,6 +18,7 @@ var obj = {
 
   enable(service) {
     var mod = `musepm-${service}`;
+    let mpm = exec(`npm install --save musepm`);
     let ret = exec(`npm install --save ${mod}`);
     require(`${process.cwd()}/node_modules/${mod}/lib/signup`);
   }
