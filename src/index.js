@@ -21,8 +21,11 @@ var obj = {
     let mpm = exec(`npm install --save musepm`);
     let ret = exec(`npm install --save ${mod}`);
     require(`${process.cwd()}/node_modules/${mod}/lib/signup`);
-  }
+  },
 
+  signon(service, cfg) {
+    require(service).signon(cfg);   
+  }
 }
 
 class Api extends EventEmitter {
