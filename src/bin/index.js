@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 require('shelljs/global');
-
-var program = require('commander'),
+var childproc = require('child_process'),
+    program = require('commander'),
     path = require('path'),
     lib = require('../index');
 
@@ -22,7 +22,13 @@ program
   let script = require.resolve(`musepm-${service}`);
   let lib = path.dirname(script);
   let fname = `${lib}/signupbot.js`;
-  exec(`cd ${__dirname}/../../node_modules/musepm-signupbot;` +
+  let botpath = `${__dirname}/../../node_modules/musepm-signupbot`;
+  botpath = path.resolve(botpath); 
+  let botbin = `${botpath}/node_modules/.bin`;
+  let env = {
+    PATH: process.env.PATH+':'+botbin
+  };
+  childproc.exec(`cd ${__dirname}/../../node_modules/musepm-signupbot;` +
        `npm run signup ${fname}`);
 });
 
