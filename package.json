@@ -1,6 +1,6 @@
 {
   "name": "musepm",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Muse simplifies microservices",
   "main": "lib/index.js",
   "bin": {
@@ -28,6 +28,7 @@
   "dependencies": {
     "babel-runtime": "^5.4.7",
     "commander": "^2.8.1",
+    "musepm-signupbot": "^1.0.1",
     "shelljs": "^0.5.0"
   },
   "devDependencies": {

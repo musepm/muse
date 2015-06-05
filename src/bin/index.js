@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+require('shelljs/global');
+
 var program = require('commander'),
     lib = require('../index');
 
@@ -10,6 +12,14 @@ program
 .action( (service) => {
   console.log(`Setting up ${service}`);
   lib.enable(service);
+});
+
+program
+.commmand('newapp <service>')
+.description('add a new app and get a token/key for a service')
+.action( (service) => {
+  exec('cd '+__dirname+'/node_modules/musepm-signupbot;' +
+       'npm run signup ' + service);
 });
 
 program.parse(process.argv);
