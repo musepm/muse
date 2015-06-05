@@ -29,7 +29,11 @@ program
     PATH: process.env.PATH+':'+botbin
   };
   childproc.exec(`cd ${__dirname}/../../node_modules/musepm-signupbot;` +
-       `npm run signup ${fname}`);
+       `npm run signup ${fname}`, { env }, (e, o, er) => {
+    console.log(o);
+    if (e) console.error(e);
+    if (er) console.error(er);    
+  });
 });
 
 program.parse(process.argv);
