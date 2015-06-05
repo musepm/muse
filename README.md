@@ -33,11 +33,10 @@ them to package.json.
 ## Slack Realtime
 
 ```shell
-muse enable runvnc/slack
+muse enable slack
 ```
 
 ```javascript
-var muse = require('muse');                                       
                                                                   
 require('musepm').signon('slack', 'testbot03')
 .then( function(slack) {   
