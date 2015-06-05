@@ -15,7 +15,7 @@ program
 });
 
 program
-.commmand('newapp <service>')
+.command('newapp <service>')
 .description('add a new app and get a token/key for a service')
 .action( (service) => {
   exec('cd '+__dirname+'/node_modules/musepm-signupbot;' +
