@@ -3,6 +3,7 @@
 require('shelljs/global');
 
 var program = require('commander'),
+    path = require('path'),
     lib = require('../index');
 
 program
