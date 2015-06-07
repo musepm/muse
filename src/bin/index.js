@@ -21,14 +21,16 @@ program
 .action( (service) => {
   let lib = `${process.cwd()}/node_modules/musepm-${service}`;
   let fname = `${lib}/lib/signupbot.js`;
+  
   let botpath = `${__dirname}/../../node_modules/musepm-signupbot`;
+  cp(fname, botpath+'/newapp-'+service+'.js');
   botpath = path.resolve(botpath); 
   let botbin = `${botpath}/node_modules/.bin`;
   let env = {
-    PATH: process.env.PATH+':'+botbin
+    PATH: process.env.PATH+':'/+botbin
   };
   childproc.exec(`cd ${__dirname}/../../node_modules/musepm-signupbot;` +
-       `npm run signup ${fname}`, { env }, (e, o, er) => {
+       `npm run signup newapp-${service}.js`, { env }, (e, o, er) => {
     console.log(o);
     if (e) console.error(e);
     if (er) console.error(er);    
