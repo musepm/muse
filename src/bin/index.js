@@ -19,9 +19,8 @@ program
 .command('newapp <service>')
 .description('add a new app and get a token/key for a service')
 .action( (service) => {
-  let script = `${process.cwd()}/node_modules/musepm-${service}`;
-  let lib = path.dirname(script);
-  let fname = `${lib}/signupbot.js`;
+  let lib = `${process.cwd()}/node_modules/musepm-${service}`;
+  let fname = `${lib}/lib/signupbot.js`;
   let botpath = `${__dirname}/../../node_modules/musepm-signupbot`;
   botpath = path.resolve(botpath); 
   let botbin = `${botpath}/node_modules/.bin`;
