@@ -19,7 +19,7 @@ program
 .command('newapp <service>')
 .description('add a new app and get a token/key for a service')
 .action( (service) => {
-  let fname = `node_modules/musepm-${service}/${lib}/signupbot.js`;
+  let fname = `node_modules/musepm-${service}/lib/signupbot.js`;
   childproc.exec(`casperjs ${fname}`, {}, (e, o, er) => {
     console.log(o);
     if (e) console.error(e);
