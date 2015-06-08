@@ -19,18 +19,10 @@ program
 .command('newapp <service>')
 .description('add a new app and get a token/key for a service')
 .action( (service) => {
-  let lib = `${process.cwd()}/node_modules/musepm-${service}`;
-  let fname = `${lib}/lib/signupbot.js`;
-  
-  let botpath = `${__dirname}/../../node_modules/musepm-signupbot`;
-  cp(fname, botpath+'/newapp-'+service+'.js');
-  botpath = path.resolve(botpath); 
-  let botbin = `${botpath}/node_modules/.bin`;
-  let env = {
-    PATH: process.env.PATH+':'/+botbin
-  };
-  childproc.exec(`cd ${__dirname}/../../node_modules/musepm-signupbot;` +
-       `npm run newapp newapp-${service}.js`, { env }, (e, o, er) => {
+  let serv = require.resolve(`musepm-${service}`);
+  let lib = path.dirname(serv);
+  let fname = `${lib}/signupbot.js`;
+  childproc.exec(`casperjs ${fname}`, {}, (e, o, er) => {
     console.log(o);
     if (e) console.error(e);
     if (er) console.error(er);    
