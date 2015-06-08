@@ -30,7 +30,7 @@ program
     PATH: process.env.PATH+':'/+botbin
   };
   childproc.exec(`cd ${__dirname}/../../node_modules/musepm-signupbot;` +
-       `npm run signup newapp-${service}.js`, { env }, (e, o, er) => {
+       `npm run newapp newapp-${service}.js`, { env }, (e, o, er) => {
     console.log(o);
     if (e) console.error(e);
     if (er) console.error(er);    
