@@ -19,9 +19,11 @@ program
 .command('newapp <service>')
 .description('add a new app and get a token/key for a service')
 .action( (service) => {
-  let fname = `node_modules/musepm-${service}/lib/signupbot.js`;
+  let dir = `node_modules/musepm-${service}/lib`;
+  let fname = `${dir}/signupbot.js`;
+
   let opts = { async:true, silent:false };
-  exec(`casperjs ${fname}`, opts, (code, o) => {
+  exec(`cd ${dir}; casperjs ${fname}`, opts, (code, o) => {
     console.log(o);
     if (er) console.error(er); 
   });
