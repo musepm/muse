@@ -20,10 +20,10 @@ program
 .description('add a new app and get a token/key for a service')
 .action( (service) => {
   let fname = `node_modules/musepm-${service}/lib/signupbot.js`;
-  childproc.exec(`casperjs ${fname}`, {}, (e, o, er) => {
+  let opts = { async:true, silent:false };
+  exec(`casperjs ${fname}`, opts, (code, o) => {
     console.log(o);
-    if (e) console.error(e);
-    if (er) console.error(er);    
+    if (er) console.error(er); 
   });
 });
 
