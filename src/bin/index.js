@@ -20,8 +20,7 @@ program
 .description('add a new app and get a token/key for a service')
 .action( (service) => {
   let dir = `node_modules/musepm-${service}/lib`;
-  let fname = `${dir}/signupbot.js`;
-
+  let fname = `signupbot.js`;
   let opts = { async:true, silent:false };
   exec(`cd ${dir}; casperjs ${fname}`, opts, (code, o) => {
     console.log(o);
