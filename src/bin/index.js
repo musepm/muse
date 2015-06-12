@@ -22,7 +22,7 @@ program
   let dir = `node_modules/musepm-${service}/lib`;
   let fname = `signupbot.js`;
   let opts = { async:true, silent:false };
-  exec(`cd ${dir}; casperjs ${fname}`, opts, (code, o) => {
+  exec(`cd ${dir}; node lib/signup`, opts, (code, o) => {
     console.log(o);
     if (er) console.error(er); 
   });
