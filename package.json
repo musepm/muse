@@ -7,7 +7,7 @@
     "musepm": "lib/bin/index.js"
   },
   "scripts": {
-    "build": "babel -d lib --stage 1 src",
+    "build": "babel --optional runtime -d lib --stage 1 src",
     "test": "echo \"Error: no test specified\" && exit 1",
     "preinstall": "npm i -g babel-runtime; npm i -g phantomjs; npm i -g casperjs"
   },
@@ -28,6 +28,7 @@
   "homepage": "https://github.com/runvnc/muse",
   "dependencies": {
     "babel-runtime": "^5.4.7",
+    "babel": "^5.4.7",
     "commander": "^2.8.1",
     "shelljs": "^0.5.0"
   },
