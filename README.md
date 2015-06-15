@@ -33,7 +33,7 @@ them to package.json.
 ## Slack Realtime
 
 ```shell
-muse enable slack
+musepm enable slack
 ```
 
 ```javascript
