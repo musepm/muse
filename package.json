@@ -1,6 +1,6 @@
 {
   "name": "musepm",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Muse simplifies microservices",
   "main": "lib/index.js",
   "bin": {
@@ -9,7 +9,7 @@
   "scripts": {
     "build": "babel --optional runtime -d lib --stage 1 src",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "preinstall": "npm i -g phantomjs; npm i -g casperjs"
+    "preinstall": "npm i -g phantomjs; npm i -g casperjs@1.1.0-beta3"
   },
   "repository": {
     "type": "git",
