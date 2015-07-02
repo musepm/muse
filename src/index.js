@@ -24,7 +24,8 @@ var obj = {
   },
 
   async signon(service, cfg) {
-    return await require(`musepm-${service}`).signon(cfg);   
+    var srv = await require(`musepm-${service}`).signon(cfg);   
+    return srv;
   }
 }
 
