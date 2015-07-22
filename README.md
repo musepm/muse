@@ -4,7 +4,7 @@ Muse simplifies microservices.
 
 # Install
 
-`npm install -g runvnc/muse`
+`npm install -g musepm`
 
 # Services
 
@@ -14,11 +14,6 @@ simple.   Service modules return promises that automatically
 connect.
 
 All service methods return promises.
-
-# Testing/Mocks
-
-All services implement an identical mock API which is enabled
-by calling `require('muse').mockAll()`;
 
 # Adding Services
 
@@ -37,7 +32,6 @@ musepm enable slack
 ```
 
 ```javascript
-                                                                  
 require('musepm').signon('slack', 'testbot03')
 .then( function(slack) {   
   slack.on('open', function() {
@@ -47,19 +41,29 @@ require('musepm').signon('slack', 'testbot03')
 });                                                               
 ```
 
-# Architecture
+## S3
 
-## Microservice modules
+```shell
+musepm enable s3
+```
 
-### Naming convention
+```javascript
+let cfg = {region:'us-west-2', appid:'myapp02'};
+require('musepm').signon('s3',cfg)
+.then( function(s3) {
+  var params = {CreateBucketConfiguration: {LocationConstraint:'us-west-2'}, Bucket: 'myuniq6455397'};
+  s3.createBucket(params, function(e) {
+    var params = {LocationConstraint:'us-west-2', Bucket: 'myuniq6455397', Key: 'myKey', Body: 'Hello!'};
+   s3.upload(params, function(err, data) {
+      if (err) {
+        console.log("Error uploading data: ", err);
+      } else {
+        console.log("Successfully uploaded.");
+      }
+    });
+  });
+}).catch(function(e) {
+  console.error(e);
+});
 
-* Mock classes for testing are in `muse-{service}/lib/mock.js`, 
-e.g. `muse-slack/lib/mock.js` for the Slack mock implementation.  (Might use Sinon to enhance mock objects returned to user.)
-
-* Each mock and back end implements a class with an identical 
-set of public methods. 
-
-* The `muse-{service}` module checks whether mocking is enabled
-and if so provides and initializes `muse-{service}/lib/mock.js` 
-or if not mocking then `muse-{service}/lib/real.js`. 
-
+```
