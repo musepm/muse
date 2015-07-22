@@ -9,7 +9,7 @@
   "scripts": {
     "build": "babel --optional runtime -d lib --stage 1 src",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "preinstall": "npm i -g phantomjs; npm i -g casperjs@1.1.0-beta3"
+    "preinstall": "./prereq.sh"
   },
   "repository": {
     "type": "git",
